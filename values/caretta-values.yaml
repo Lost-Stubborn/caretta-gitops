@@ -1,0 +1,5 @@
+victoria-metrics-single:
+  enabled: false
+
+grafana:
+  enabled: false

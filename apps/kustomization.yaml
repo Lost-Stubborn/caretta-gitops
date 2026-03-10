@@ -1,0 +1,12 @@
+resources:
+  - caretta-dashboard.yaml
+  - caretta-podmonitor.yaml
+
+configMapGenerator:
+  - name: caretta-dashboard
+    namespace: monitoring
+    files:
+      - ../grafana_dashboards/caretta-dashboard.json
+
+generatorOptions:
+  disableNameSuffixHash: true

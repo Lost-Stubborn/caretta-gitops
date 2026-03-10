@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: caretta
+  namespace: monitoring
+  labels:
+    release: prometheus
+spec:
+  namespaceSelector:
+    matchNames:
+      - caretta
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: caretta
+  podMetricsEndpoints:
+  - targetPort: 7117
+    path: /metrics
+    interval: 15s
