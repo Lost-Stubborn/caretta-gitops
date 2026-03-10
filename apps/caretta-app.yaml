@@ -7,4 +7,22 @@ metadata:
 spec:
   project: default
 
-  source
+  source: 
+    repoURL: https://github.com/Lost-Stubborn/caretta-gitops.git
+    targetRevision: HEAD
+    path: .
+    helm:
+      valueFiles:
+        - values/caretta-values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: caretta
+  
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    
+    syncOptions: 
+      - CreateNamespace=true
