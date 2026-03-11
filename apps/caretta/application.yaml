@@ -8,12 +8,12 @@ spec:
   project: default
 
   source: 
-    repoURL: https://github.com/Lost-Stubborn/caretta-gitops.git
-    targetRevision: HEAD
-    path: .
+    repoURL: https://helm.groundcover.com/
+    chart: caretta
+    targetRevision: "*"
     helm:
       valueFiles:
-        - values/caretta-values.yaml
+        - values.yaml
 
   destination:
     server: https://kubernetes.default.svc
