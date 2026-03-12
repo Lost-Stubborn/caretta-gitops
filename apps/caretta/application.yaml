@@ -7,13 +7,18 @@ metadata:
 spec:
   project: default
 
-  source: 
-    repoURL: https://helm.groundcover.com/
+  sources: 
+  
+  - repoURL: https://helm.groundcover.com/
     chart: caretta
     targetRevision: "*"
     helm:
       valueFiles:
-        - values.yaml
+        - $values/apps/caretta/values.yaml 
+
+  - repoURL: https://github.com/Lost-Stubborn/caretta-gitops
+    targetRevision: HEAD
+    ref: values
 
   destination:
     server: https://kubernetes.default.svc
