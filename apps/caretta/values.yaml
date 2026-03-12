@@ -3,3 +3,6 @@ victoria-metrics-single:
 
 grafana:
   enabled: false
+
+podSecurityPolicy:
+  enabled: false
